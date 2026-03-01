@@ -7,8 +7,4 @@ spring:
 
   # data:
   mongodb:
-    uri: ${MONGO_USER_URI}
-
-user:
-  validation:
-    strict-mode: true
+    uri: ${MONGO_USER_URI:mongodb+srv://rahulray:W5hmMtw9vpG7vYkY@cluster0.z15xp0c.mongodb.net/authdb?authSource=admin}
