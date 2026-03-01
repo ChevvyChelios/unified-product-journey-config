@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: ${SERVER_PORT:8083}
 
 spring:
   application:
@@ -7,14 +7,15 @@ spring:
 
   # data:
   mongodb:
-    uri: ${MONGO_AUTH_URI}
+    uri: ${MONGO_AUTH_URI.}
 
 security:
   jwt:
-    secret: ${JWT_SECRET}
+    secret: ${JWT_SECRET:MyJwtSecretKey12345678901234567890}
     access-token-expiration: 900000        # 15 min
     refresh-token-expiration: 604800000    # 7 days
-    
+    issuer: auth-service
+    audience: product-journey-platform
 
 auth:
   refresh:
