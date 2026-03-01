@@ -1,0 +1,20 @@
+server:
+  port: ${SERVER_PORT:8081}
+
+spring:
+  application:
+    name: journey-service
+
+  # data:
+  mongodb:
+    uri: ${MONGO_JOURNEY_URI}
+
+journey:
+  metadata:
+    source: database   # database | json | excel
+  pricing:
+    engine-enabled: true
+  underwriting:
+    enabled: true
+  validation:
+    dynamic-rules: true

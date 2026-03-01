@@ -1,0 +1,14 @@
+server:
+  port: ${SERVER_PORT:8081}
+
+spring:
+  application:
+    name: user-service
+
+  # data:
+  mongodb:
+    uri: ${MONGO_USER_URI}
+
+user:
+  validation:
+    strict-mode: true
