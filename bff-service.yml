@@ -20,13 +20,13 @@ jwt:
 # Existing grouped service URL bindings
 service:
   auth:
-    url: ${AUTH_SERVICE_URL:localhost:8083}  # ${AUTH_SERVICE_URL:3.229.131.115:8083}
+    url: ${AUTH_SERVICE_URL:http://localhost:8083}  # ${AUTH_SERVICE_URL:3.229.131.115:8083}
   user:
-    url: ${USER_SERVICE_URL:localhost:8082}  # ${USER_SERVICE_URL:3.229.131.115:8082}
+    url: ${USER_SERVICE_URL:http://localhost:8082}  # ${USER_SERVICE_URL:3.229.131.115:8082}
   journey:
-    url: ${JOURNEY_SERVICE_URL:localhost:8081}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
+    url: ${JOURNEY_SERVICE_URL:http://localhost:8081}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
   document:
-    url: ${DOCUMENT_SERVICE_URL:localhost:8078}  # ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
+    url: ${DOCUMENT_SERVICE_URL:http://localhost:8078}  # ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
 
 bff:
   parallel-calls:
