@@ -1,7 +1,7 @@
 spring:
     jackson:
         serialization:
-            write-dates-as-timestamps: false
+            WRITE_DATES_AS_TIMESTAMPS: false
     main:
         allow-bean-definition-overriding: true
     security:
