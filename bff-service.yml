@@ -1,19 +1,32 @@
 server:
-  port: ${SERVER_PORT:8079}
+  port: 8079
 
 spring:
   application:
     name: bff-service
+  security:
+    user:
+      name: disabled
+      password: disabled
 
-services:
+# Disable Eureka Client - Service URLs are configured directly
+eureka:
+  client:
+    enabled: false
+
+jwt:
+  secret: MyJwtSecretKey12345678901234567890
+
+# Existing grouped service URL bindings
+service:
   auth:
-    url: ${AUTH_SERVICE_URL:3.229.131.115:8083}
+    url: ${AUTH_SERVICE_URL:localhost:8083}  # ${AUTH_SERVICE_URL:3.229.131.115:8083}
   user:
-    url: ${USER_SERVICE_URL:3.229.131.115:8082}
+    url: ${USER_SERVICE_URL:localhost:8082}  # ${USER_SERVICE_URL:3.229.131.115:8082}
   journey:
-    url: ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
+    url: ${JOURNEY_SERVICE_URL:localhost:8081}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
   document:
-    url: ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
+    url: ${DOCUMENT_SERVICE_URL:localhost:8078}  # ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
 
 bff:
   parallel-calls:
@@ -25,3 +38,85 @@ bff:
 cors:
   allowed-origins: "*"
   allowed-methods: GET,POST,PUT,DELETE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,circuitbreakers,circuitbreakerevents,bulkheads,bulkheadevents
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: WARN
+    com.hdfc.bff: INFO
+    io.github.resilience4j: INFO
+    org.springframework.boot.devtools: OFF
+    org.springframework.cloud: WARN
+    com.netflix.discovery: WARN
+    org.springframework.security: WARN
+    org.apache.catalina: WARN
+  file:
+    name: logs/bff-service.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%X{correlationId}] %-5level %logger{36} - %replace(%msg){'[\\r\\n]+',' '}%nopex%n"
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      userService:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 20
+        minimumNumberOfCalls: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+      journeyService:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 20
+        minimumNumberOfCalls: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 30s
+        permittedNumberOfCallsInHalfOpenState: 5
+        registerHealthIndicator: true
+      authService:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 20
+        minimumNumberOfCalls: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 30s
+        permittedNumberOfCallsInHalfOpenState: 3
+  retry:
+    instances:
+      userService:
+        maxAttempts: 2
+        waitDuration: 200ms
+        retryExceptions: java.io.IOException,feign.RetryableException
+  bulkhead:
+    instances:
+      userService:
+        maxConcurrentCalls: 50
+        maxWaitDuration: 0
+      journeyService:
+        maxConcurrentCalls: 50
+        maxWaitDuration: 0
+      authService:
+        maxConcurrentCalls: 20
+        maxWaitDuration: 0
+  ratelimiter:
+    instances:
+      loginLimiter:
+        limitForPeriod: 5
+        limitRefreshPeriod: 60s
+        timeoutDuration: 0
+      refreshLimiter:
+        limitForPeriod: 10
+        limitRefreshPeriod: 60s
+        timeoutDuration: 0
+      journeyLimiter:
+        limitForPeriod: 30
+        limitRefreshPeriod: 60s
+        timeoutDuration: 0
