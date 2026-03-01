@@ -25,11 +25,11 @@ document:
     provider: s3   # local | s3
     local-path: /uploads
     s3:
-      bucket-name: ${S3_BUCKET_NAME}
+      bucket-name: ${S3_BUCKET_NAME:document-service-avinash-2026}
 
 aws:
-  region: ${AWS_REGION:}
-  bucket-name: ${S3_BUCKET_NAME}
+  region: ${AWS_REGION:ap-south-1}
+  bucket-name: ${S3_BUCKET_NAME:document-service-avinash-2026}
   accessKeyId: ${AWS_ACCESS_KEY_ID:}
   secretAccessKey: ${AWS_SECRET_ACCESS_KEY:}
   sessionToken: ${AWS_SESSION_TOKEN:}
