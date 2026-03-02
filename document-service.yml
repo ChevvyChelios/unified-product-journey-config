@@ -13,6 +13,7 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+  # REMOVE
   mongodb:
     uri: ${MONGO_DOCUMENT_URI:mongodb+srv://Avinash:${MONGO_PASSWORD:avinash}@cluster0.unfgwu0.mongodb.net/product_journey?retryWrites=true&w=majority}
     database: product_journey
@@ -22,11 +23,13 @@ spring:
 
 document:
   storage:
-    provider: s3   # local | s3
+    provider: local   # local | s3 (default fallback)
+    # REMOVE
     local-path: /uploads
     s3:
       bucket-name: ${S3_BUCKET_NAME:document-service-avinash-2026}
 
+# REMOVE
 aws:
   region: ${AWS_REGION:ap-south-1}
   bucket-name: ${S3_BUCKET_NAME:document-service-avinash-2026}

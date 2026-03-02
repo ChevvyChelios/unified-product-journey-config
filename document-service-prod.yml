@@ -1,0 +1,15 @@
+
+spring:
+  mongodb:
+    uri: ${MONGO_DOCUMENT_URI}
+    database: product_journey
+
+document:
+  storage:
+    provider: s3   # local | s3
+    s3:
+      bucket-name: ${S3_BUCKET_NAME}
+
+aws:
+  region: ${AWS_REGION:ap-south-1}
+  bucket-name: ${S3_BUCKET_NAME}

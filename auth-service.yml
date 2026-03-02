@@ -15,7 +15,7 @@ spring:
 
 # security:
 jwt:
-  secret: ${JWT_SECRET:MyJwtSecretKey12345678901234567890}
+  secret: ${JWT_SECRET:MyJwtSecretKey12345678901234567890}  # remove in deployment
   accessTokenExpiration: 900        # 15 min
   refreshTokenExpiration: 7    # 7 days
   issuer: auth-service

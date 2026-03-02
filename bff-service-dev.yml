@@ -1,0 +1,34 @@
+
+jwt:
+  secret: ${JWT_SECRET:MyJwtSecretKey12345678901234567890}
+
+# Existing grouped service URL bindings
+service:
+  auth:
+    url: ${AUTH_SERVICE_URL:http://localhost:8083}  # ${AUTH_SERVICE_URL:3.229.131.115:8083}
+  user:
+    url: ${USER_SERVICE_URL:http://localhost:8082}  # ${USER_SERVICE_URL:3.229.131.115:8082}
+  journey:
+    url: ${JOURNEY_SERVICE_URL:http://localhost:8081}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
+  document:
+    url: ${DOCUMENT_SERVICE_URL:http://localhost:8078}  # ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
+
+cors:
+  allowed-origins: "*"
+    # - http://localhost:3000
+    # - https://your-frontend-domain.com
+  allowed-origin-patterns: "*"
+  allowed-methods: 
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+  allowed-headers: 
+    - "*"
+  allow-credentials: true
+
+logging:
+  level:
+    root: WARN
+    com.hdfc.bff: INFO
