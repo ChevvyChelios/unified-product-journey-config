@@ -20,3 +20,7 @@ jwt:
   refreshTokenExpiration: 7    # 7 days
   issuer: auth-service
   audience: product-journey-platform
+
+logging:
+  level:
+    root: DEBUG
