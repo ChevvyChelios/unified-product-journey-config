@@ -8,6 +8,9 @@ spring:
   # data:
   mongodb:
     uri: ${MONGO_JOURNEY_URI:mongodb+srv://rahulray:W5hmMtw9vpG7vYkY@cluster0.z15xp0c.mongodb.net/unifiedJourney?authSource=admin}
+  web:
+    error:
+      include-stacktrace: never
 
 journey:
   metadata:
