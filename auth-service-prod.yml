@@ -1,13 +1,13 @@
-server:
-  port: 80
+# server:
+#   port: 80
 spring:
   # data:
   mongodb:
-    uri: ${MONGO_AUTH_URI}
+    uri: ${MONGO_AUTH_URI:mongodb+srv://rahulray:W5hmMtw9vpG7vYkY@cluster0.z15xp0c.mongodb.net/authdb?authSource=admin}
 
 # security:
 jwt:
-  secret: ${JWT_SECRET}
+  secret: ${JWT_SECRET:MyJwtSecretKey12345678901234567890}
 
 logging:
   level:

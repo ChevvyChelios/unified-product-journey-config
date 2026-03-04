@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: ${SERVER_PORT:8079}
 jwt:
   secret: ${JWT_SECRET:MyJwtSecretKey12345678901234567890}
 
