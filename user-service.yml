@@ -11,3 +11,13 @@ spring:
   # data:
   mongodb:
     uri: ${MONGO_USER_URI:mongodb+srv://rahulray:W5hmMtw9vpG7vYkY@cluster0.z15xp0c.mongodb.net/authdb?authSource=admin}
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+  health:
+    mongo:
+      enabled: false

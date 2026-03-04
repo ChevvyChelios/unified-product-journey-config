@@ -20,3 +20,13 @@ journey:
     enabled: true
   validation:
     dynamic-rules: true
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+  health:
+    mongo:
+      enabled: false

@@ -59,7 +59,13 @@ management:
         include: health,metrics,circuitbreakers,circuitbreakerevents,bulkheads,bulkheadevents,refresh,info
   endpoint:
     health:
+      probes:
+        enabled: true
       show-details: always
+  health:
+    mongo:
+      enabled: false
+
 
 # REMOVE
 logging:
