@@ -7,17 +7,13 @@ jwt:
 # Existing grouped service URL bindings
 service:
   auth:
-    # url: ${AUTH_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com/auth} 
-    url: ${AUTH_SERVICE_URL:3.229.131.115:8083}
+    url: ${AUTH_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com/auth}  # ${AUTH_SERVICE_URL:3.229.131.115:8083}
   user:
-    # url: ${USER_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com/user}  
-    url: ${USER_SERVICE_URL:3.229.131.115:8082}
+    url: ${USER_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com/user}  # ${USER_SERVICE_URL:3.229.131.115:8082}
   journey:
-    # url: ${JOURNEY_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com/journey}
-    url: ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
+    url: ${JOURNEY_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com/journey}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
   document:
-    # url: ${DOCUMENT_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com/document}
-    url: ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
+    url: ${DOCUMENT_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com/document}  # ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
 
 cors:
   allowed-origins: "*"
