@@ -11,7 +11,7 @@ service:
   user:
     url: ${USER_SERVICE_URL:https://user-service-ycz2.onrender.com}  # ${USER_SERVICE_URL:3.229.131.115:8082}
   journey:
-    url: ${JOURNEY_SERVICE_URL:https://journey-service.onrender.com}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
+    url: ${JOURNEY_SERVICE_URL:https://journey-service-qooj.onrender.com}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
   document:
     url: ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
 
