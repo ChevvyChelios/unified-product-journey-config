@@ -7,13 +7,22 @@ jwt:
 # Existing grouped service URL bindings
 service:
   auth:
-    url: ${AUTH_SERVICE_URL:https://auth-service-r8xi.onrender.com}  # ${AUTH_SERVICE_URL:3.229.131.115:8083}
+    url: ${AUTH_SERVICE_URL:https://auth-service-production-3847.up.railway.app}  # ${AUTH_SERVICE_URL:3.229.131.115:8083}
   user:
-    url: ${USER_SERVICE_URL:https://user-service-ycz2.onrender.com}  # ${USER_SERVICE_URL:3.229.131.115:8082}
+    url: ${USER_SERVICE_URL:https://user-service-production-a7d7.up.railway.app}  # ${USER_SERVICE_URL:3.229.131.115:8082}
   journey:
-    url: ${JOURNEY_SERVICE_URL:https://journey-service-qooj.onrender.com}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
+    url: ${JOURNEY_SERVICE_URL:https://journey-service-production.up.railway.app}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
   document:
     url: ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
+# service:
+#   auth:
+#     url: ${AUTH_SERVICE_URL:https://auth-service-r8xi.onrender.com}  # ${AUTH_SERVICE_URL:3.229.131.115:8083}
+#   user:
+#     url: ${USER_SERVICE_URL:https://user-service-ycz2.onrender.com}  # ${USER_SERVICE_URL:3.229.131.115:8082}
+#   journey:
+#     url: ${JOURNEY_SERVICE_URL:https://journey-service-qooj.onrender.com}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
+#   document:
+#     url: ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
 
 cors:
   allowed-origins: "*"
