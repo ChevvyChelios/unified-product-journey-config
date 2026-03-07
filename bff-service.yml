@@ -56,7 +56,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: metrics,circuitbreakers,circuitbreakerevents,bulkheads,bulkheadevents,refresh,info
+        include: health,metrics,circuitbreakers,circuitbreakerevents,bulkheads,bulkheadevents,refresh,info,liveness,readiness
   endpoint:
     health:
       probes:
