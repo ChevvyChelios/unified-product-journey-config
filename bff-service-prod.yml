@@ -11,7 +11,7 @@ service:
   journey:
     url: ${JOURNEY_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com:80}
   document:
-    url: ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
+    url: ${DOCUMENT_SERVICE_URL:http://3.229.131.115:8078}
     # url: ${DOCUMENT_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com:80}
 
 cors:
