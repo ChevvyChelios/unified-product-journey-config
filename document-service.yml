@@ -46,3 +46,17 @@ management:
     mongo:
       enabled: false
   
+cors:
+  allowed-origins: "*"
+    # - http://localhost:3000
+    # - https://your-frontend-domain.com
+  allowed-origin-patterns: "*"
+  allowed-methods: 
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+  allowed-headers: 
+    - "*"
+  allow-credentials: true
