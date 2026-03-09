@@ -11,12 +11,12 @@ document:
     local-path: /uploads
     # REMOVE
     s3:
-      bucket-name: ${S3_BUCKET_NAME:insurance-docs-bucket-1234}
+      bucket-name: ${S3_BUCKET_NAME:document-service-avinash-2026}
 
 # REMOVE
 aws:
-  region: ${AWS_REGION:us-east-1}
-  bucket-name: ${S3_BUCKET_NAME:insurance-docs-bucket-1234}
+  region: ${AWS_REGION:ap-south-1}
+  bucket-name: ${S3_BUCKET_NAME:document-service-avinash-2026}
   accessKeyId: ${AWS_ACCESS_KEY_ID:}
   secretAccessKey: ${AWS_SECRET_ACCESS_KEY:}
   sessionToken: ${AWS_SESSION_TOKEN:}
