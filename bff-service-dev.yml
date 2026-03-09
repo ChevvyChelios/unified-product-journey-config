@@ -11,7 +11,8 @@ service:
   user:
     url: ${USER_SERVICE_URL:https://user-service-production-278c.up.railway.app}  # ${USER_SERVICE_URL:3.229.131.115:8082}
   journey:
-    url: ${JOURNEY_SERVICE_URL:https://journey-service-production-0a84.up.railway.app}  # ${JOURNEY_SERVICE_URL:3.229.131.115:8081}
+    url: ${JOURNEY_SERVICE_URL:http://localhost:8081}
+    # url: ${JOURNEY_SERVICE_URL:https://journey-service-production-0a84.up.railway.app}
   document:
     url: ${DOCUMENT_SERVICE_URL:3.229.131.115:8078}
 # service:
