@@ -5,7 +5,8 @@ jwt:
 # Existing grouped service URL bindings
 service:
   auth:
-    url: ${AUTH_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com:80}
+    url: ${AUTH_SERVICE_URL:""}
+    # url: ${AUTH_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com:80}
   user:
     url: ${USER_SERVICE_URL:http://internal-alb-internal-services-2087387266.us-east-1.elb.amazonaws.com:80}
   journey:
